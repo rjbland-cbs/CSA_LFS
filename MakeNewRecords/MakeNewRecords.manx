@@ -7,7 +7,7 @@
 }
 
 USES
-   Meta 'C:\Blaise5\Surveys\LFS\LFS'
+   Meta '..\LFS\LFS'
 
 UPDATEFILE UP1 : Meta('C:\Blaise5\Surveys\LFS\LFS', BDIX)
 TEMPORARYFILE t1 : Meta

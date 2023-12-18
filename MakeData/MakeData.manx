@@ -7,7 +7,7 @@
 }
 
 USES
-   Meta 'C:\Blaise5\Surveys\LFS\LFS'
+   Meta '..\LFS\LFS'
 
 OUTPUTFILE OUT1 : Meta('C:\Blaise5\Surveys\LFS\LFS', BDIX)
 
