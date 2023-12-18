@@ -25,9 +25,12 @@ FIELDS
    Work "What do you do for work?" : STRING
    Hours "How many hours do you work?" : tWorkHours
 RULES
+   HaveJob.keep
+   Work.keep
+   Hours.keep
    IF LFS_Old.HaveJob = RESPONSE THEN
       IF LFS_old.HaveJob = Yes THEN
-         l_StillSameJobText := 'Last time you said you had a job at ' + LFS_Old.Job + ', is this still the case?'
+         l_StillSameJobText := 'Last time you said you had a job as a ' + LFS_Old.Job + ', is this still the case?'
       ELSE
          l_StillSameJobText := 'Last time you said you didn\'t have a job, is this still the case?'
       ENDIF
@@ -45,7 +48,7 @@ RULES
          Hours
       ENDIF
    ENDIF 
-ENDBLOCK
+ENDBLOCK // bMain
 
 PROCEDURE FillNew
 RULES
@@ -55,10 +58,7 @@ RULES
    LFS_New.Extra := Extra
 ENDPROCEDURE
 
-
-
-
-
+// Datamodel
 FIELDS
 
   ID : INTEGER
