@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="LFS" Guid="b2cb131d-7227-44e1-b1c7-239b44c6ef40" ProjectType="DatamodelProject">
+  <MainFile RelativePath="true">LFS.blax</MainFile>
+  <FileItems>
+    <File FileType="DatamodelFileType" RelativePath="true">LFS.blax</File>
+    <File FileType="ResourceDatabaseFileType" RelativePath="true">LFS.blrd</File>
+  </FileItems>
+  <Properties>
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+    <ResourceDB RelativePath="true">LFS.blrd</ResourceDB>
+    <SupportedModes />
+    <UsedResourceSets />
+    <AppSupport />
+    <IsRunnableSurvey>True</IsRunnableSurvey>
+    <CatiRole />
+    <UseCari>False</UseCari>
+    <WebDataEntryClient>MvcDebug</WebDataEntryClient>
+    <ContentSecurityPolicyFileName />
+    <AddFieldGroupOrderInformation>False</AddFieldGroupOrderInformation>
+    <IgnoreLayoutErrors>False</IgnoreLayoutErrors>
+    <IgnoreRichtextErrors>False</IgnoreRichtextErrors>
+    <StartCondition />
+    <ActionsSetup />
+    <DataConversionSetup />
+    <DownloadInterceptorSetup />
+    <WriteInterceptorSetup />
+    <RunWriteInterceptorSetupAsynchronously>False</RunWriteInterceptorSetupAsynchronously>
+  </Properties>
+</Project>

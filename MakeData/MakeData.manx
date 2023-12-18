@@ -1,0 +1,25 @@
+﻿SETTINGS
+   AUTOREAD = NO
+   CONNECT = NO
+
+{
+'C:\Blaise5\Surveys\
+}
+
+USES
+   Meta 'C:\Blaise5\Surveys\LFS\LFS'
+
+OUTPUTFILE OUT1 : Meta('C:\Blaise5\Surveys\LFS\LFS', BDIX)
+
+AUXFIELDS
+   i : INTEGER
+   Res : INTEGER 
+
+   
+MANIPULATE
+   FOR i := 1 TO 10 DO
+      out1.INITRECORD
+      out1.ID := i
+      out1.InterviewNr := 1
+      out1.WRITE
+   ENDDO

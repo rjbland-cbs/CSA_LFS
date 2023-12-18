@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="MakeData" Guid="02ff8467-9409-40b1-8a37-996c2d005738" ProjectType="ManipulaProject">
+  <MainFile RelativePath="true">MakeData.manx</MainFile>
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">MakeData.manx</File>
+  </FileItems>
+  <Properties>
+    <AppSupport />
+    <IsAppMainUserInterface />
+    <ResourceDB />
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+  </Properties>
+</Project>

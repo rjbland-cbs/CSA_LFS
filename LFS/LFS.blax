@@ -1,0 +1,85 @@
+﻿DATAMODEL LFS
+
+PRIMARY ID, InterviewNr
+SECONDARY Status
+
+TYPE tYesNo = (Yes, No)
+     tWorkHours = 1..80
+     tOk = (Ok), EMPTY
+
+BLOCK bLFS
+FIELDS
+   HaveJob : tYesNo
+   Job : STRING
+   Hours : tWorkHours
+   Extra : tOk
+ENDBLOCK
+
+BLOCK bMain
+LOCALS
+   l_StillSameJobText : STRING
+   l_AskJob : (Yes, No)
+FIELDS
+   StillSameJob "^l_StillSameJobText" : tYesNo
+   HaveJob "Do you have a job" : tYesNo
+   Work "What do you do for work?" : STRING
+   Hours "How many hours do you work?" : tWorkHours
+RULES
+   IF LFS_Old.HaveJob = RESPONSE THEN
+      IF LFS_old.HaveJob = Yes THEN
+         l_StillSameJobText := 'Last time you said you had a job at ' + LFS_Old.Job + ', is this still the case?'
+      ELSE
+         l_StillSameJobText := 'Last time you said you didn\'t have a job, is this still the case?'
+      ENDIF
+      StillSameJob
+      IF StillSameJob = YES THEN
+         HaveJob := LFS_Old.HaveJob
+         Work := LFS_Old.Job
+         Hours := LFS_Old.Hours
+      ENDIF
+   ENDIF
+   IF LFS_Old.HaveJob <> RESPONSE OR StillSameJob = NO THEN
+      HaveJob
+      IF HaveJob = Yes THEN
+         Work
+         Hours
+      ENDIF
+   ENDIF 
+ENDBLOCK
+
+PROCEDURE FillNew
+RULES
+   LFS_New.HaveJob := Main.HaveJob
+   LFS_New.Job := Main.Work
+   LFS_New.Hours := Main.Hours
+   LFS_New.Extra := Extra
+ENDPROCEDURE
+
+
+
+
+
+FIELDS
+
+  ID : INTEGER
+  InterviewNr : 1..5
+  Status: (Started, Finished, Processed)
+  LFS_Old : bLFS
+  LFS_New : bLFS
+  Main : bMain
+  Extra "This is an extra question" : tOk
+  
+RULES
+   ID.keep
+   InterviewNr.KEEP
+   Status.KEEP
+   LFS_Old.keep
+   LFS_New.keep
+   IF Status = EMPTY THEN
+      Status := 1
+   ENDIF
+   Main
+   Extra
+   FillNew
+   
+ENDMODEL

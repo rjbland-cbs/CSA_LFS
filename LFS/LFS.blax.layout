@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LayoutSpecification xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="LFS" Version="13" GenerateAllSections="true" GenerateClientRules="true" UseGenericPages="true">
+  <Languages>
+    <Language Name="" />
+  </Languages>
+  <LayoutSets>
+    <LayoutSet Name="Large" ResourceSetName="Large" StyleName="Indigo" RequiredStyle="false" DesignHeight="768" DesignWidth="1024" ResizeMode="Auto" RouteItemsPerPage="1" RowsPerTable="999" ConditionAsString="((Client.Width &gt; 1024 AND Client.Device &lt;&gt; IPhone) AND Client.Device &lt;&gt; AndroidPhone) AND Client.Device &lt;&gt; WindowsPhone" ReceiptPageName="Default" IntroPageName="" ResumePageName="" AbortPageName="Default">
+      <InstanceLayoutInstructions>
+        <RouteItemLayoutInstructions RouteItemName="Extra">
+          <Instructions>
+            <TemplateInstruction Locator="Before" TemplateName="Default" TemplateTarget="MasterPage" Parameters="{ParameterValues OnTryLeavePageForward={Action AssignField('Status', '2', '')}}" />
+          </Instructions>
+        </RouteItemLayoutInstructions>
+      </InstanceLayoutInstructions>
+      <Parallels>
+        <Parallel Name="">
+          <IsGeneric>false</IsGeneric>
+        </Parallel>
+        <Parallel Name="PRIMARY">
+          <IsGeneric>false</IsGeneric>
+        </Parallel>
+      </Parallels>
+    </LayoutSet>
+  </LayoutSets>
+  <LayoutSetGroups>
+    <LayoutSetGroup Name="Interviewing" DataEntrySettingsName="StrictInterviewing">
+      <LayoutSetNames>
+        <string>Large</string>
+      </LayoutSetNames>
+    </LayoutSetGroup>
+  </LayoutSetGroups>
+  <RoleReferences>
+    <RoleReference Name="Help" />
+    <RoleReference Name="Watermark" />
+    <RoleReference Name="ToolTip" />
+    <RoleReference Name="SpecialAnswer" />
+    <RoleReference Name="CategoryGroup" />
+    <RoleReference Name="EditMask" />
+    <RoleReference Name="Included" />
+    <RoleReference Name="Excluded" />
+    <RoleReference Name="Emphasized" />
+    <RoleReference Name="Optional" />
+    <RoleReference Name="Instructional" />
+  </RoleReferences>
+  <TypeReferences>
+    <TypeReference Name="THeader" />
+    <TypeReference Name="TCurrency" />
+  </TypeReferences>
+  <LayoutSpecFieldReferences xmlns="layoutspec">
+    <LayoutSpecFieldReference Name="RespondentTimeZone" />
+    <LayoutSpecFieldReference Name="RespondentTime" />
+    <LayoutSpecFieldReference Name="MainSurveyName" />
+    <LayoutSpecFieldReference Name="InstrumentID" />
+    <LayoutSpecFieldReference Name="InterviewerID" />
+    <LayoutSpecFieldReference Name="CaseID" />
+    <LayoutSpecFieldReference Name="SomeSetField" />
+    <LayoutSpecFieldReference Name="Status" MappedDatamodelField="Status" />
+  </LayoutSpecFieldReferences>
+</LayoutSpecification>

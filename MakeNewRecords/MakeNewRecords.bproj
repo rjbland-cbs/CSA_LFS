@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="MakeNewRecords" Guid="6d8a7c38-b9d3-4075-a445-5e1fd97b915a" ProjectType="ManipulaProject">
+  <MainFile RelativePath="true">MakeNewRecords.manx</MainFile>
+  <FileItems>
+    <File FileType="ManipulaFileType" RelativePath="true">MakeNewRecords.manx</File>
+  </FileItems>
+  <Properties>
+    <AppSupport />
+    <IsAppMainUserInterface />
+    <ResourceDB />
+    <SurveyRoot />
+    <ConditionalDefines />
+    <DatamodelSearchPath />
+    <ExternalSearchPath />
+    <IncludeSearchPath />
+    <LibrarySearchPath />
+  </Properties>
+</Project>

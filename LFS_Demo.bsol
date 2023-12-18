@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Solution Name="LFS_Demo">
+  <StartupProject RelativePath="true">LFS\LFS.bproj</StartupProject>
+  <ProjectItems>
+    <Project RelativePath="true" BuildSequence="2">LFS\LFS.bproj</Project>
+    <Project RelativePath="true" BuildSequence="4">MakeData\MakeData.bproj</Project>
+    <Project RelativePath="true" BuildSequence="6">MakeNewRecords\MakeNewRecords.bproj</Project>
+  </ProjectItems>
+</Solution>

@@ -1,0 +1,34 @@
+﻿SETTINGS
+   AUTOREAD = NO
+   CONNECT = NO
+
+{
+'C:\Blaise5\Surveys\
+}
+
+USES
+   Meta 'C:\Blaise5\Surveys\LFS\LFS'
+
+UPDATEFILE UP1 : Meta('C:\Blaise5\Surveys\LFS\LFS', BDIX)
+TEMPORARYFILE t1 : Meta
+
+AUXFIELDS
+   i : INTEGER
+   Res : INTEGER 
+   
+   
+MANIPULATE
+   UP1.SETRECORDFILTER('Status=2')
+   REPEAT
+      up1.READNEXT
+      up1.Status := 3
+      up1.WRITE
+      IF up1.InterviewNr < 5 THEN
+         t1 := up1
+         up1.INITRECORD
+         up1.ID := t1.ID
+         up1.InterviewNr := t1.InterviewNr + 1
+         up1.LFS_Old := t1.LFS_New
+         up1.WRITE
+      ENDIF
+   UNTIL up1.LASTRECORD
